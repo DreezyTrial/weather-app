@@ -1,0 +1,11 @@
+@if (forecastData().length) {
+  <div class="forecast">
+    @for (item of forecastData(); track item.dt) {
+      <div class="forecast__item">
+        <span class="forecast__item-date">{{ item.dt_txt }}</span>
+        <span class="forecast__item-temp">{{ item.main?.temp }}°C</span>
+        <span class="forecast__item-description">{{ item.weather?.[0]?.description }}</span>
+      </div>
+    }
+  </div>
+}

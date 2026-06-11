@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #000000, #24243e);
+  min-height: 100vh;
+  color: white;
+}
+
+.weather-app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, rgba(41, 36, 36, 0.6));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
