@@ -1,0 +1,22 @@
+.weather-app {
+  &__geo {
+    display: flex;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+  }
+  &__geo:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  &__search-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}

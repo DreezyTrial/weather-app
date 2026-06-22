@@ -1,7 +1,12 @@
 <div class="weather-app">
   <header class="weather-app__header">
     <h1 class="weather-app__title">Weather App</h1>
-    <app-search (citySelected)="onCitySelected($event)" />
+    <div class="weather-app__search-row">
+      <app-search 
+      [setCity]="selectedCity()"
+       (citySelected)="onCitySelected($event)" />
+      <button class="weather-app__geo" (click)="onGetLocation()">📍</button>
+    </div>
   </header>
 
   <main class="weather-app__main">

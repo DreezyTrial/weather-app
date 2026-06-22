@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, effect, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent {
   readonly searchQuery = signal<string>('');
   readonly citySelected = output<string>();
+  readonly setCity = input<string>()
 
   onSearch() {
     if (this.searchQuery().length > 2) {
@@ -18,5 +19,13 @@ export class SearchComponent {
     } else {
       alert('Please enter at least 3 characters');
     }
+  }
+  constructor(){
+    effect(()=>{
+      const city =this.setCity();
+      if(city){
+        this.searchQuery.set(city)
+      }
+    })
   }
 }

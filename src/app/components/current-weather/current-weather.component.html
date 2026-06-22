@@ -10,4 +10,10 @@
       </div>
     </div>
   }
+  @else if (isLoading()) {
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  }
+  @else if (errorMessage()) {
+    <div class="error-message">{{ errorMessage() }}</div>
+  }
 </div>
