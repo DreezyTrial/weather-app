@@ -15,11 +15,13 @@ export class CurrentWeatherComponent {
   readonly weatherService = inject(WeatherService);
   readonly isLoading = signal<boolean>(false);
   readonly errorMessage = signal<string>('');
+  
   constructor() {
     effect(() => {
-      this.isLoading.set(true);
       const city = this.city();
       if (city) {
+        this.errorMessage.set('');
+        this.isLoading.set(true);
         this.weatherService.getCurrentWeather(city).subscribe({
           next: (weather) => {
             this.currentWeather.set(weather);

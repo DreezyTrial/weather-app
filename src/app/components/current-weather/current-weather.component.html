@@ -1,6 +1,7 @@
 <div class="current-weather">
   @if (currentWeather().name) {
     <div class="current-weather__card">
+      <img [src]="'https://openweathermap.org/img/wn/' + currentWeather().weather?.[0]?.icon + '@2x.png'" [alt]="currentWeather().weather?.[0]?.description">
       <h2 class="current-weather__name">{{ currentWeather().name }}</h2>
       <span class="current-weather__temperature">{{ currentWeather().main?.temp }}°C</span>
       <span class="current-weather__description">{{ currentWeather().weather?.[0]?.description }}</span>
@@ -17,3 +18,4 @@
     <div class="error-message">{{ errorMessage() }}</div>
   }
 </div>
+  
